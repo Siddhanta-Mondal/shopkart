@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/public/css/checkout.css">
+  <title>Cart</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav">
+        <img  src="img/shoppingkartlogo-removebg-preview.png" class="brand-logo" alt="" >
+        <div class="nav-items">
+            <div class="search">
+                <input type="text" class="search-box" placeholder="search brand, product">
+                <button class="search-btn">search</button>
+            </div>
+            <div class="user-kart">
+              <a href="/public/cartpage.html"><i class="bi bi-cart3"></i></a>
+              <a href="#"><i class="bi bi-bookmark-heart"></i></a>
+              <a href="#"><i class="bi bi-person-circle"></i></a>
+            </div>
+            <div class="login">
+                <a href="/public/loginpage.html"> <button class="btn">Login</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="bar" style="background-color: rgb(215, 255, 227);">
+        <ul class="links-container">
+            <li class="link-item"><a href="#" class="link">home</a></li>
+            <li class="link-item"><a href="#" class="link">Today's Deals</a></li>
+            <li class="link-item"><a href="#" class="link">women</a></li>
+            <li class="link-item"><a href="#" class="link">men</a></li>
+            <li class="link-item"><a href="#" class="link">Electronics</a></li>
+            <li class="link-item"><a href="#" class="link">Book & More</a></li>
+            <li class="link-item"><a href="#" class="link">Offer zone</a></li>
+            <li class="link-item"><a href="#" class="link">Home & Kitchen</a></li>
+            <li class="link-item"><a href="#" class="link">Pay-bills</a></li>
+            <li class="link-item"><a href="#" class="link">Top-Deals</a></li>
+            <li class="link-item"><a href="#" class="link">Groceary</a></li>
+            <li class="link-item"><a href="#" class="link">accessories</a></li>
+        </ul>
+      </div>
+    </nav>
+  <div class="ma">
+    <div class="basket">
+      <div class="basket-module">
+        <label for="promo-code">Enter a promotional code</label>
+        <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+        <button class="promo-code-cta">Apply</button>
+      </div>
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price">Price</li>
+          <li class="quantity">Quantity</li>
+          <li class="subtotal">Subtotal</li>
+        </ul>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="/public/img/card2.png" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><strong><span class="item-quantity"></span> HRX T-shirt</strong> Lace Cutt Dress</h1>
+            <p><strong>Navy, Size M-40 </strong></p>
+            <p>Product Code - 183123</p>
+          </div>
+        </div>
+        <div class="price">499.00</div>
+        <div class="quantity">
+          <input type="number" value="4" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">499.00</div>
+        <div class="remove">
+          <button>Remove</button>
+        </div>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="/public/img/card10.png" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><strong><span class="item-quantity">1</span> x ADIDAS</strong> ADIDAS shooes without laces</h1>
+            <p><strong>Navy, Size 10</strong></p>
+            <p>Product Code - 232321939</p>
+          </div>
+        </div>
+        <div class="price">2600.00</div>
+        <div class="quantity">
+          <input type="number" value="1" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">2600.00</div>
+        <div class="remove">
+          <button>Remove</button>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Subtotal</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">3099.00</div>
+          <div class="summary-promo hide">
+            <div class="promo-title">Promotion</div>
+            <div class="promo-value final-value" id="basket-promo"></div>
+          </div>
+        </div>
+        <div class="summary-delivery">
+          <select name="delivery-collection" class="summary-delivery-selection">
+              <option value="0" selected="selected">Select Delivery type</option>
+             <option value="collection">Cash on delivary(COD)</option>
+             <option value="first-class">Credit Card</option>
+             <option value="second-class">Debit card</option>
+             <option value="signed-for">UPI</option>
+             <option value="signed-for">Shopkart WAllet</option>
+          </select>
+        </div>
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">3099.00</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta">Checkout Items</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+  
+</body>
+
+</html>
