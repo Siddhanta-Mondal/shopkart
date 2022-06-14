@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/women.css">
+    <link rel="stylesheet" href="css/home.css">
+    <title>women dress</title>
+</head>
+<body>
+    <div class="navelc">
+        <nav class="navbar">
+            <div class="nav">
+                <a href="main.html"><img  src="img/shoppingkartlogo-removebg-preview.png" alt="" height="45px"></a>
+                <div class="nav-items">
+                    <div class="search">
+                        <input type="text" class="search-box" placeholder="search brand, product">
+                        <button class="search-btn">search</button>
+                    </div>
+                    <div class="user-kart">
+                        <a href="cartpage.html"><i class="bi bi-cart3"></i></a>
+                        <a href="#"><i class="bi bi-bookmark-heart"></i></a>
+                        <a href="#"><i class="bi bi-person-circle"></i></a>
+                      </div>
+                    <div class="login">
+                        <a href="loginpage.html"> <button class="btn">Login</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="bar" style="background-color: rgb(215, 255, 227);">
+                <ul class="links-container">
+                    <li class="link-item"><a href="/shopkart-copy/main.html" class="link">home</a></li>
+                    <li class="link-item"><a href="#" class="link">Today's Deals</a></li>
+                    <li class="link-item"><a href="women.html" class="link">women</a></li>
+                    <li class="link-item"><a href="men.html" class="link">men</a></li>
+                    <li class="link-item"><a href="productelctronic.html" class="link">Electronics</a></li>
+                    <li class="link-item"><a href="#" class="link">Book & More</a></li>
+                    <li class="link-item"><a href="#" class="link">Offer zone</a></li>
+                    <li class="link-item"><a href="#" class="link">Home & Kitchen</a></li>
+                    <li class="link-item"><a href="#" class="link">Pay-bills</a></li>
+                    <li class="link-item"><a href="#" class="link">Top-Deals</a></li>
+                    <li class="link-item"><a href="#" class="link">Groceary</a></li>
+                    <li class="link-item"><a href="#" class="link">accessories</a></li>
+                </ul>
+              </div>
+            </nav>
+    </div>
+
+     <!-- silder............... -->
+
+   <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/8/ba5790ef-6bfe-427c-8b13-739320e1cba11652015668956-Kurtas---Sets_Desk.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/16/b34920bb-ea4d-4a10-8ea9-eadaaaef32c51652719219288-Tops---Tees_Desk--1-.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/3/3f6d1e2a-5ef6-4921-be5d-443a11b11d801651599573985-Dresses_Desk.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/4/17/f1874a9d-c423-44d3-a529-6c63521d6f991650181498608-Sarees_Desk.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/4/17/1377cd42-3e4c-4cd7-ae0e-1719e81ff1db1650181498574-Formal-Footwear_Desk.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/4/10/38f37101-f335-44be-af8f-5d53de15c75e1649530843725-Casual---Sports-Shoes_Desk--1-.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/4/10/9dc6368b-8168-495f-8259-97e29f523b0c1649582887347-Loungewear_Desk.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/26/96c64eda-e42b-45fd-ba32-6e0b95bc5c131653587104949-Sportswear_Desk--2-.jpg" alt=""></div>
+    
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+<!-- procuct............... -->
+    <div class="listing-section">
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-1"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Brand</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">Lorem ipsum dolor sit.</p>
+       
+            <button type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-2"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Brand xyz</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">Lorem, ipsum dolor.</p>
+            <button type="button" name="item-2-button" id="item-2-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-3"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">barnd4</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">Lorem, ipsum dolor.</p>
+          
+            <button type="button" name="item-3-button" id="item-3-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-4"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">brand</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">Lorem, ipsum dolor.</p>
+          
+            <button type="button" name="item-4-button" id="item-4-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-5"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Brandxyz</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">Lorem, ipsum dolor.</p>
+            
+            <button type="button" name="item-5-button" id="item-5-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-6"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Coconut</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">A bag of delicious coconuts!</p>
+           
+            <button type="button" name="item-6-button" id="item-6-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-7"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Banana</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">A bag of delicious bananas!</p>
+           
+            <button type="button" name="item-7-button" id="item-7-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-8"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Plum</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">A bag of delicious plums!</p>
+           
+            <button type="button" name="item-8-button" id="item-8-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-9"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Avocado</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">A bag of delicious avocados!</p>
+         
+            <button type="button" name="item-9-button" id="item-9-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-10"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Lemon</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">A bag of delicious lemons!</p>
+          
+            <button type="button" name="item-10-button" id="item-10-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+            <div class="image-box">
+              <div class="images" id="image-11"></div>
+            </div>
+            <div class="text-box">
+              <h2 class="item">Lemon</h2>
+              <h3 class="price">$4.99</h3>
+              <p class="description">A bag of delicious lemons!</p>
+           
+              <button type="button" name="item-10-button" id="item-10-button">Add to Cart</button>
+            </div>
+          </div>
+            <div class="product">
+          <div class="image-box">
+            <div class="images" id="image-12"></div>
+          </div>
+          <div class="text-box">
+            <h2 class="item">Lemon</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">A bag of delicious lemons!</p>
+            <button type="button" name="item-10-button" id="item-10-button">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product">
+            <div class="image-box">
+              <div class="images" id="image-13"></div>
+            </div>
+            <div class="text-box">
+              <h2 class="item">Lemon</h2>
+              <h3 class="price">$4.99</h3>
+              <p class="description">A bag of delicious lemons!</p>
+              <button type="button" name="item-10-button" id="item-10-button">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product">
+            <div class="image-box">
+              <div class="images" id="image-14"></div>
+            </div>
+            <div class="text-box">
+              <h2 class="item">Lemon</h2>
+              <h3 class="price">$4.99</h3>
+              <p class="description">A bag of delicious lemons!</p>
+              <button type="button" name="item-10-button" id="item-10-button">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product">
+            <div class="image-box">
+              <div class="images" id="image-15"></div>
+            </div>
+            <div class="text-box">
+              <h2 class="item">Lemon</h2>
+              <h3 class="price">$4.99</h3>
+              <p class="description">A bag of delicious lemons!</p>
+              <button type="button" name="item-10-button" id="item-10-button">Add to Cart</button>
+            </div>
+          </div>
+
+      </div>
+      
+</body>
+</html>

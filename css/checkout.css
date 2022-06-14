@@ -1,6 +1,6 @@
-@import 'nav.css'
-ma {
 
+.ma{
+ 
   background-color: #fff;
   color: #666;
   font-family: 'Open Sans', sans-serif;
@@ -57,7 +57,7 @@ button,
 .basket,
 .basket-module,
 .basket-labels,
-.item,
+.ite,
 .price,
 .quantity,
 .subtotal,
@@ -157,8 +157,8 @@ li.subtotal:before {
   content: '';
 }
 
-.item {
-  width: 55%;
+.ite {
+  width: 50%;
 }
 
 .price,
@@ -201,7 +201,7 @@ li.subtotal:before {
   position: relative;
 }
 
-.product-image {
+.product-imag {
   width: 30%;
   height: 173px;
 }

@@ -1,0 +1,356 @@
+* {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .listing-section, .cart-section {
+    width: 100%;
+    float: left;
+    border-bottom: 0.01em solid #dddbdb;
+  }
+  
+  .product {
+    float: left;
+    width: 178px;
+    border-radius: 2%;
+    margin: 1%;
+  }
+  
+  .product:hover {
+    box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);  
+    -moz-box-shadow:    1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);
+  }
+  
+  .image-box {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2% 2% 0 0;
+  }
+  
+  .images {
+    height: 260px;
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    border-radius: 2% 2% 0 0;
+    transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+  }
+  
+  .images:hover {
+    transform: scale(1.2);
+    overflow: hidden;
+    border-radius: 2%;
+    cursor: pointer;
+  }
+  
+  /* IMAGES */
+  #image-1 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14162930/2021/4/23/2f8c562d-d2dd-4440-bb0c-324af0859b8d1619152711906PumaMenGreySolidRoundNeckT-shirt1.jpg");}
+  
+  #image-2 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13483768/2022/3/24/811e36e8-b821-401f-8d7a-259d7a83b0f21648108010902PumaMenBlueEnzo2RunningShoes1.jpg")}
+  
+  #image-3 {background-image: url("/shopkart-copy/img/product\ image\ 3.png")}
+  
+  #image-4 {background-image: url("https://rukminim1.flixcart.com/image/580/696/l1fc0i80/jean/g/d/u/32-pm206767e603-pepe-jeans-original-imagczr29fneur48.jpeg?q=50")}
+  
+  #image-5 {background-image: url("https://rukminim1.flixcart.com/image/580/696/kfpq5jk0-0/kurta/r/z/a/l-kast101we-majestic-man-original-imafw49um5uzgrg3.jpeg?q=50")}
+  
+  #image-6 {background-image: url("https://rukminim1.flixcart.com/image/580/696/kx9as280/shirt/g/v/y/40-rmsz11031-b7-raymond-original-imag9qwjckmrnzuw.jpeg?q=50")}
+  
+  #image-7 {background-image: url("https://rukminim1.flixcart.com/image/580/696/l3bx5e80/trouser/r/l/o/32-pjtfpskpq52279-peter-england-original-imageh5p85srcbgq.jpeg?q=50")}
+  
+  #image-8 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12693928/2022/5/4/9ada6b2e-baee-4825-a099-6d50f4b0a26a1651660774032PumaUnisexBlackSolidBaseballCap1.jpg")}
+  
+  #image-9 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18087710/2022/5/18/aba7b4ba-52a0-4aca-98eb-b8b13644534f1652846753556-Levis-Men-Navy-Blue--Orange-Brand-Logo-Printed-Pure-Cotton-C-1.jpg")}
+  
+  #image-10 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14851900/2021/9/8/45b1574a-79ab-4208-b7f3-500b80fa532d1631074946809-Levis-Men-Shirts-1551631074945941-1.jpg")}
+
+  #image-11 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18074852/2022/5/18/ae7936ea-c92b-4007-81af-a0cf6fe66a841652846660583-Levis-Men-Blue-Tapered-Fit-Light-Fade-Stretchable-Casual-Jea-1.jpg")}
+
+  #image-12 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1729391/2019/8/28/a9d4a7aa-af7e-4a37-a9d4-a94dc8c057e81566992341974-WROGN-Navy-Blue-Slim-Fit-Checked-Casual-Shirt-52415669923403-1.jpg")}
+
+  #image-13 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/5415202/2018/5/23/7a32e5c1-6ac6-4219-984e-63cb68497fa21527075068613-Roadster-Men-Trousers-6171527075067295-1.jpg")}
+
+  
+  #image-14 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2284633/2018/2/19/11519031607868-Roadster-Men-Shirts-5971519031607655-1.jpg")}
+  
+  #image-15 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16040158/2022/5/13/3736bb71-6200-47f2-99ad-4fef8bc5d06f1652440594945-Nautica-Men-Shorts-6481652440594023-1.jpg")}
+
+  
+  .text-box {
+    width: 100%;
+    float: left;
+    border: 0.01em solid #dddbdb;
+    border-radius: 0 0 2% 2%;
+    padding: 1em;
+  }
+  
+  h2, h3 {
+    float: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: 0.2em auto;
+  }
+  
+  .item, .price {
+    clear: left;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .price {
+    color: Grey;
+  }
+  
+  .description, label, button, input {
+    float: left;
+    clear: left;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    margin: 0.2em auto;
+  }
+  
+  input:focus {
+    outline-color: #fdf;
+  }
+  
+  label {
+    width: 60%;
+  }
+  
+  .text-box input {
+    width: 15%;
+    clear: none;
+  }
+  
+  .text-box button {
+    margin-top: 1em;
+  }
+  
+  button {
+    padding: 2%;
+    background-color: #dfd;
+    border: none;
+    border-radius: 2%;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    bottom: 0.1em;
+    background-color: rgb(136, 66, 99);
+    color: white;
+  }
+  
+  button:focus {
+    outline: 0;
+  }
+  
+  button:active {
+    bottom: 0;
+    background-color: #fdf;
+  }
+  
+  .table-heading, .table-content {
+    width: 75%;
+    margin: 1% 12.25%;
+    float: left;
+    background-color: #dfd;
+  }
+  
+  .table-heading h2 {
+    padding: 1%;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .cart-product {
+    width: 50%;
+    float: left;
+  }
+  
+  .cart-price {
+    width: 15%;
+    float: left;
+  }
+  
+  .cart-quantity {
+    width: 10%;
+    float: left;
+  }
+  
+  .cart-total {
+    width: 25%;
+    float: left;
+  }
+  
+  .cart-image-box {
+    width: 20%;
+    overflow: hidden;
+    border-radius: 2%;
+    float: left;
+    margin: 1%;
+  }
+  
+  .cart-images {
+    height: 7em;
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+  }
+  
+  .cart-item {
+    width: 20%;
+    float: left;
+    margin: 3.2em 1%;
+    text-align: center;
+  }
+  .cart-description {
+    width: 53%;
+    float: left;
+    margin: 3.2em 1%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+  }
+  
+  .cart-price h3, .cart-total h3 {
+    margin: 3.2em 5% 3.2em 20%;
+    width: 60%;
+  }
+  
+  .cart-quantity input {
+    margin: 3.2em 1%;
+    border: none;
+  }
+  
+  .remove {
+    width: 10%;
+    margin: 1px;
+    float: right;
+    clear: right;
+  }
+  
+  .coupon {
+    width: 20%;
+    background-color: #dfd;
+    margin: 1% 1% 1% 12.25%;
+    float: left;
+    height: 6em;
+  }
+  
+  .coupon input {
+    width: 60%;
+    border: none;
+    margin: 12.75% 5%;
+    padding: 1%;
+  }
+  
+  .coupon button {
+    width: 25%;
+    float: left;
+    clear: right;
+    margin: 12% 5% 12% 0;
+  }
+  
+  .keep-shopping {
+    width: 15%;
+    height: 6em;
+    float: left;
+    margin: 1% auto;
+    padding: 1%;
+    background-color: #dfd;
+  }
+  
+  .keep-shopping button {
+    text-transform: uppercase;
+    margin: 12% auto;
+    
+  }
+  
+  .checkout {
+    width: 37.25%;
+    margin: 1% 12.75% 1% 1%;
+    float: right;
+    background-color: #dfd;
+    height: 6em;
+  }
+  
+  .checkout button {
+    width: 30%;
+    clear: none;
+    margin: 5.4% 0 5.4% 5.5%;
+    text-transform: uppercase;
+  }
+  
+  .final-cart-total {
+    width: 15%;
+    float: right;
+    margin: 7%;
+    background-color: White;
+  }
+  
+  .final-cart-total h3 {
+    color: Black;
+  }  
+
+  /* slider................ */
+
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 330px;
+    cursor: pointer;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

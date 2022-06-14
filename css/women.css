@@ -1,0 +1,356 @@
+* {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .listing-section, .cart-section {
+    width: 100%;
+    float: left;
+    border-bottom: 0.01em solid #dddbdb;
+  }
+  
+  .product {
+    float: left;
+    width: 18%;
+    border-radius: 2%;
+    margin: 1%;
+  }
+  
+  .product:hover {
+    box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);  
+    -moz-box-shadow:    1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);
+  }
+  
+  .image-box {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2% 2% 0 0;
+  }
+  
+  .images {
+    height: 260px;
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    border-radius: 2% 2% 0 0;
+    transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+  }
+  
+  .images:hover {
+    transform: scale(1.2);
+    overflow: hidden;
+    border-radius: 2%;
+    cursor: pointer;
+  }
+  
+  /* IMAGES */
+  #image-1 {background-image: url("https://rukminim1.flixcart.com/image/580/696/ktop5e80/t-shirt/x/k/g/s-67039701-puma-original-imag6zbyzyxuzsek.jpeg?q=50");}
+  
+  #image-2 {background-image: url("https://rukminim1.flixcart.com/image/580/696/korijrk0/top/1/q/9/l-sftops40036-sassafras-original-imag35cug8wxsamq.jpeg?q=50")}
+  
+  #image-3 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2519738/2018/7/30/60fe144d-0972-46cc-9f91-d60f02b986001532946796279-Roadster-Women-Tshirts-4291532946796087-1.jpg")}
+  
+  #image-4 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14703416/2021/12/24/e368fd2f-6bc3-4dab-9ffa-55f78ab1a0951640328968080-HRX-By-Hrithik-Roshan-Lifestyle-Women-Strong-Blue-Bio-Wash-C-1.jpg")}
+  
+  #image-5 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13270022/2021/3/30/4afa0d81-934e-4bf8-b96c-990b6e760eb11617109217335-Roadster-Women-Tshirts-8231617109216604-1.jpg")}
+  
+  #image-6 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13446290/2021/2/15/8abbdd0a-2e01-490c-ad1b-db2885632ce81613386733659-Biba-Women-Blue--Off-White-Printed-Kurta-with-Churidar--Dupa-1.jpg")}
+  
+  #image-7 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17851744/2022/4/11/dcd9b93c-5460-479a-bc3f-39d150e117981649687899584HRITIKAWomenBlackSarees1.jpg")}
+  
+  #image-8 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13913226/2021/4/8/3c65d8f5-e6ec-42a9-8807-18b334f4704f1617865032559-Biba-Women-Mustard-Yellow-Solid-Straight-Kurti-1291617865031-1.jpg")}
+  
+  #image-9 {background-image: url("https://rukminim1.flixcart.com/image/580/696/l29c9e80/sari/x/e/w/free-mithya-tereza-unstitched-original-imagdny3ypvphutq.jpeg?q=50")}
+  
+  #image-10 {background-image: url("https://rukminim1.flixcart.com/image/580/696/l0mr7gw0/ethnic-set/s/e/r/s-98vs1079krskd-vasant-apparel-original-imagcdmeh2pgyfye.jpeg?q=50")}
+
+  #image-11 {background-image: url("https://rukminim1.flixcart.com/image/580/696/l09w8sw0/sari/9/p/c/free-new-stylist-pink-heavy-embroidered-party-festive-wedding-original-imagc3dndq2f6yk7.jpeg?q=50")}
+
+  #image-12 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15195736/2022/4/5/4dc201e5-ec81-458a-af30-c6e99a37691a1649158065149-Mitera-Red--Gold-Toned-Woven-Design-Bandhani-Saree-146164915-1.jpg")}
+
+  #image-13 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2018/12/4/817ad75c-f13e-4c6a-89ca-88d9582ac5871543921329282-1.jpg")}
+
+  
+  #image-14 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13719160/2022/4/18/6b10c50c-71fb-443a-a970-78ca9246c65d1650283616702AthenaCharmingFuchsiaPinkPowerShouldersTulipHemWrapDress1.jpg")}
+  
+  #image-15 {background-image: url("https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10054821/2019/7/3/db52fd6a-19fc-4add-bc4b-77b8608454d01562138455279-Veni-Vidi-Vici-Women-Black-Bodycon-Dress-3841562138453419-1.jpg")}
+
+  
+  .text-box {
+    width: 100%;
+    float: left;
+    border: 0.01em solid #dddbdb;
+    border-radius: 0 0 2% 2%;
+    padding: 1em;
+  }
+  
+  h2, h3 {
+    float: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: 0.2em auto;
+  }
+  
+  .item, .price {
+    clear: left;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .price {
+    color: Grey;
+  }
+  
+  .description, label, button, input {
+    float: left;
+    clear: left;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    margin: 0.2em auto;
+  }
+  
+  input:focus {
+    outline-color: #fdf;
+  }
+  
+  label {
+    width: 60%;
+  }
+  
+  .text-box input {
+    width: 15%;
+    clear: none;
+  }
+  
+  .text-box button {
+    margin-top: 1em;
+  }
+  
+  button {
+    padding: 2%;
+    background-color: #dfd;
+    border: none;
+    border-radius: 2%;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    bottom: 0.1em;
+    background-color: rgb(136, 66, 99);
+    color: white;
+  }
+  
+  button:focus {
+    outline: 0;
+  }
+  
+  button:active {
+    bottom: 0;
+    background-color: #fdf;
+  }
+  
+  .table-heading, .table-content {
+    width: 75%;
+    margin: 1% 12.25%;
+    float: left;
+    background-color: #dfd;
+  }
+  
+  .table-heading h2 {
+    padding: 1%;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .cart-product {
+    width: 50%;
+    float: left;
+  }
+  
+  .cart-price {
+    width: 15%;
+    float: left;
+  }
+  
+  .cart-quantity {
+    width: 10%;
+    float: left;
+  }
+  
+  .cart-total {
+    width: 25%;
+    float: left;
+  }
+  
+  .cart-image-box {
+    width: 20%;
+    overflow: hidden;
+    border-radius: 2%;
+    float: left;
+    margin: 1%;
+  }
+  
+  .cart-images {
+    height: 7em;
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+  }
+  
+  .cart-item {
+    width: 20%;
+    float: left;
+    margin: 3.2em 1%;
+    text-align: center;
+  }
+  .cart-description {
+    width: 53%;
+    float: left;
+    margin: 3.2em 1%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+  }
+  
+  .cart-price h3, .cart-total h3 {
+    margin: 3.2em 5% 3.2em 20%;
+    width: 60%;
+  }
+  
+  .cart-quantity input {
+    margin: 3.2em 1%;
+    border: none;
+  }
+  
+  .remove {
+    width: 10%;
+    margin: 1px;
+    float: right;
+    clear: right;
+  }
+  
+  .coupon {
+    width: 20%;
+    background-color: #dfd;
+    margin: 1% 1% 1% 12.25%;
+    float: left;
+    height: 6em;
+  }
+  
+  .coupon input {
+    width: 60%;
+    border: none;
+    margin: 12.75% 5%;
+    padding: 1%;
+  }
+  
+  .coupon button {
+    width: 25%;
+    float: left;
+    clear: right;
+    margin: 12% 5% 12% 0;
+  }
+  
+  .keep-shopping {
+    width: 15%;
+    height: 6em;
+    float: left;
+    margin: 1% auto;
+    padding: 1%;
+    background-color: #dfd;
+  }
+  
+  .keep-shopping button {
+    text-transform: uppercase;
+    margin: 12% auto;
+    
+  }
+  
+  .checkout {
+    width: 37.25%;
+    margin: 1% 12.75% 1% 1%;
+    float: right;
+    background-color: #dfd;
+    height: 6em;
+  }
+  
+  .checkout button {
+    width: 30%;
+    clear: none;
+    margin: 5.4% 0 5.4% 5.5%;
+    text-transform: uppercase;
+  }
+  
+  .final-cart-total {
+    width: 15%;
+    float: right;
+    margin: 7%;
+    background-color: White;
+  }
+  
+  .final-cart-total h3 {
+    color: Black;
+  }  
+
+  /* slider................ */
+
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 330px;
+    cursor: pointer;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
