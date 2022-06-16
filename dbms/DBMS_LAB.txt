@@ -1,0 +1,600 @@
+sqlplus cse19072@172.16.11.40/XEPDB1
+
+create table EMP19073
+(Empno number(4) not null PRIMARY KEY,
+Emoname varchar(15) not null,
+Job varchar2(25) not null,
+Mgr number(4),
+Hiredate Date,
+Salary number(5) not null,
+Comm number(5) default 0,
+Deptno number(2) not null);
+
+insert into EMP19073(Empno,Emoname,Job,Mgr,Hiredate,Salary,Comm,Deptno)
+values(7369,'SMIT','CLERK',7902,'17-DEC-80',1600,500,20);
+
+select * from EMP19073;
+
+set linesize 150
+/
+
+insert into EMP19073(Empno,Emoname,Job,Mgr,Hiredate,Salary,Comm,Deptno)
+values(7499,'ALLE','SELLSMAN',7698,'20-FEB-81',21000,300,30);
+
+insert into EMP19073(Empno,Emoname,Job,Mgr,Hiredate,Salary,Comm,Deptno)
+values(7566,'JONE','MANNAGER',7839,'02-APR-81',29700,100,20);
+
+insert into EMP19073(Empno,Emoname,Job,Mgr,Hiredate,Salary,Comm,Deptno)
+values(7698,'BLAK','JOBANALYST',7566,'09-JUN-81',24800,1400,10);
+
+insert into EMP19073(Empno,Emoname,Job,Mgr,Hiredate,Salary,Deptno)
+values(7876,'ADAM','CLERK',7788,'23-MAY-81',35000,10);
+
+//DISPLAY ALL INFO ABOUT DEPERTMENT NO. 10
+select * from EMP19073 where deptno=10;
+
+//DISPLAY EMPMANE AND SALARY WHOSE SALARY BWT 15000 TO 30000
+select Emoname, Salary from EMP19073 where Salary between 15000 and 30000;
+
+//DISPLAY EMPNO AND EMPNAME FROM THE TABLE WHOSE JOB IS CLERK
+select Empno,Emoname from EMP19073 where Job='CLERK';
+
+//DISPLAY ALL DISTINCT JOB 
+select distinct Job from EMP19073;
+
+//LIST THE EMPOLEE DETAILS WHO HAVE JOINED BEFOR 1985
+select * from EMP19073 where Hiredate<'01-JAN-1985';
+
+//DISPLAY ALL EMPLOYEE INFO ACCRODING TO THEIR SALARY IN ASCENDING ORDER
+select * from EMP19073 order by salary asc;
+
+//LIST THE EMPLOYEES HOWSE JOB IS SALESMAN AND DEPTNO IS 30
+select * from EMP19073 where Job='SELLSMAN' and Deptno=30;
+
+//DISLAY THE EMPNO EMPNAME AND SALLARY FOR MGR IS 7698
+ select Empno,Emoname,Salary from EMP19073 where Mgr=7698;
+
+//LIST ALL EMPLOYEE DETAILS WHOSE DALLY SALARY MORE THAN 500
+select * from EMP19073 where (Salary/30)>500;
+
+//LIST OF EMPLOYEES IN DEPT NO 10 AND 20 IN ORDER OF EMPNAME
+select * from EMP19073 where deptno =10 or deptno=20 order by Emoname asc;
+select * from EMP19073 where deptno in(10,20) order by Emoname asc;
+
+//DISPLAY EMPLOYEE NAMES STARTING WITH S
+select Emoname from EMP19073 where Emoname like 'S%';
+
+//DISPLAY EMPNAME WHERE A ALPHABATE IS PRESENT IN BETWEEN
+select Emoname from EMP19073 where Emoname like '%AD%';
+
+//DIPLAY EMPNAME AND YEARLY SALARY OF ALL EMPLOYEES
+select Emoname "EMP_NAME",Salary*12+NVL(Comm,0) "YEARLY_SALARY" from EMP19073; 
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\24/02/2022\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+//display all employee info whose comm is null
+
+select * from EMP19073 where Comm=null;
+
+//update employee info of empno 7499, set sallary 55000
+
+update EMP19073 set Salary=55000 where Empno=7499; 
+
+//diplay maximum, minimum,avg salary and sallary sum from the emp table
+
+select max(Salary) "MAXSAL", min(Salary) "MINSAL", avg(Salary) "AVGSAL", sum(Salary) "Summation" from EMP19073;
+
+//display total no of rows in emp table
+
+select count(*) from EMP19073;
+
+//display no of employees of emp table whose job is sells man
+
+select count(Job) from EMP19073 where Job='SELLSMAN';
+
+//display the details of an emp. who is erning highest from the org.
+
+select * from EMP19073 where Salary in (select max(Salary) from EMP19073);
+
+//second highest sallary
+
+select * from EMP19073 where Salary in (select max(Salary) from EMP19073 where Salary not in (select max(Salary) from EMP19073));
+
+//display emp deails of each dept no. who is earning highest salary
+
+select * from EMP19073 where Salary in (select max(Salary) from EMP19073 group by Deptno);
+
+//modify the attribute name emp no to Eno.
+
+alter table EMP19073 rename column Empno to Eno;
+
+//display  emp info whose salary given by the user
+
+select * from EMP19073 where Salary= &Sal;
+
+
+Job='&Job';
+
+//display the avg salary of each job
+
+select Job,avg(Salary) "AVGSAL" from EMP19073 group by Job;
+
+//display all emp name along with their salary and name should be 1st letter caps others are small
+
+select initcap(Emoname) "EMPNAME" from EMP19073;
+
+//update the emp info whose job is analyst
+
+update EMP19073 set Salary=50500 where Job='JOBANALYST';
+
+//display the emp name whose name is exactly 4 without using length fun
+
+select Emoname from EMP19073 where Emoname like '____';
+
+//count the emp no under each dept.
+
+select count(*) from EMP19073 group by Deptno;
+
+//delete a record from the table whose job is analyst
+
+delete from EMP19073 where Job='JOBANALYST';
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\03/03/2022\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+insert into EMP19073(Eno,Emoname,Job,Mgr,Hiredate,Salary,Comm,Deptno)
+values(7788,'SCOT','ANALYST',7566,'19-APR-83',32000,200,30);
+
+delete from EMP19073 where Emoname='SCOT';
+
+insert into EMP19073(Eno,Emoname,Job,Hiredate,Salary,Comm,Deptno)
+values(7839,'KING','PRESIDENT','25-MAY-86',45000,200,10);
+
+insert into EMP19073(Eno,Emoname,Job,Mgr,Hiredate,Salary,Deptno)
+values(7900,'JAME','CLERK',7788,'03-DEC-82',21000,30);
+
+insert into EMP19073(Eno,Emoname,Job,Mgr,Hiredate,Salary,Comm,Deptno)
+values(7934,'MILL','MANAGER',7698,'23-JAN-83',17000,340,30);
+
+insert into EMP19073(Eno,Emoname,Job,Mgr,Hiredate,Salary,Deptno)
+values(7902,'FORD','ANALYST',7566,'17-NOV-84',40000,20);
+
+
+create table DEPT073
+(Deptno number(2) not null PRIMARY KEY,
+Dname varchar(25) not null,
+Dlocation varchar2(25) not null);
+
+
+insert into DEPT073(Deptno,Dname,Dlocation)
+values(10,'HRD','MUMBAI');
+
+insert into DEPT073(Deptno,Dname,Dlocation)
+values(20,'RESEARCH','KOLKATA');
+
+insert into DEPT073(Deptno,Dname,Dlocation)
+values(30,'SALES','DELHI');
+
+insert into DEPT073(Deptno,Dname,Dlocation)
+values(40,'OPERATION','PUNE');
+
+select * from DEPT073;
+
+//display all emp name and their dept info from the exsiting tables(EMP & DEPT)
+
+select e.Emoname,d.Deptno,d.Dname,d.Dlocation from EMP19073 e,DEPT073 d where e.Deptno=d.Deptno;
+
+//show all emp info whose dlocation is not kolkata
+
+select e.Emoname,d.Deptno,d.Dname,d.Dlocation from EMP19073 e,DEPT073 d where e.Deptno=d.Deptno and Dlocation!='KOLKATA';
+
+// list the emp name, job, salary, and deptname for everyone in company except clerk. sort on salary in decending order
+
+select e.Emoname,e.Job,e.Salary,d.Deptno from EMP19073 e,DEPT073 d where e.Deptno=d.Deptno and e.Job!='CLERK' order by e.Salary desc;
+
+//find all emp who join the company before their manager
+
+select e.Emoname, m.Emoname from EMP19073 e, EMP19073 m where e.Mgr=m.Eno and e.Hiredate<m.Hiredate;
+
+//list the emp by the name and no along with their mann name and no.
+
+select e.Emoname,e.Eno,m.Emoname,m.Eno from EMP19073 e, EMP19073 m where e.Mgr=m.Eno;
+
+//In which year did most people join the company? Display the year and no of emp.
+
+select dt,ct from(select to_char(Hiredate,'YYYY') dt, count(*) ct from EMP19073 group by to_char (Hiredate,'YYYY')) order by 2 desc;
+
+//find the most recenly hire emp who earn highest salary greater han the avg sal in that dept. short in dept no order.
+
+select e.Emoname,e.Salary,e.Hiredate from EMP19073 e where(e.Deptno,e.Hiredate) in (select b.Deptno,max(b.Hiredate)  from EMP19073 b where b.Salary<(select avg(Salary) from EMP19073 where Deptno=b.Deptno) group by Deptno); 
+
+//who are the top three eaners in the company
+
+select Emoname,Salary from (select Emoname,Salary from EMP19073 order by Salary desc) where rownum<=3;
+
+
+select rownum from EMP19073;
+
+
+/////////////////////////////////////////////10/03/2022/////////////////////////////////////////
+//list the emp those are having 4 char in their name and 3rd char must be "a"
+
+select Emoname from EMP19073 where Emoname like '__A_';
+
+//list the emp whose annual salary ranging from 18000 to 34000
+
+select Emoname from EMP19073 where Salary*12+NVL(Comm,0) between 18000 and 34000;
+
+//display all emp info whose dept location at pune but deptno is not 10
+
+select e.Emoname,d.Deptno,d.Dname,d.Dlocation from EMP19073 e,DEPT073 d where e.Deptno=d.Deptno and d.Dlocation='PUNE' and d.Deptno!=10;
+
+//display only dept location of the emp "smith"
+
+select d.Dlocation from EMP19073 e,DEPT073 d where e.Deptno=d.Deptno and e.Emoname='SMIT';
+
+//find the emp name and job of the emp who have earn max sal and commision
+
+select Emoname,Job from EMP19073 where Salary in (select max(Salary) from EMP19073) and comm!=0;
+
+//find the max avg sal drawn from each job except the job is manager
+
+select max(avg(Salary)) "MAXAVGSAL" from EMP19073 where Job!='MANNAGER' group by job;
+
+//list the emp whose sal is starting whith numeric value 2
+
+select Emoname from EMP19073 where Salary like '2%';
+
+//list the emp who have join in the month of jan
+
+select emoname from emp19073 where to_char(hiredate,'MON')='JAN';
+
+//list the emp who are clerck and having exprience more than 4 years
+
+select emoname from emp19073 where months_between(sysdate,hiredate)/12>4 and job='CLERK';
+
+//list the emp details along with their dept whose are at delhi
+
+select e.Emoname,d.Deptno,d.Dname,d.Dlocation from EMP19073 e,DEPT073 d where e.Deptno=d.Deptno and d.Dlocation='DELHI';
+
+//list the emp whose sal is grater than "smith" sal
+
+select emoname from EMP19073 where (select salary from emp19073 where emoname='SMIT')<salary;
+
+//list the details of the most recently hire emp of dept no 20
+
+select * from emp19073 where Hiredate in(select max(hiredate) from emp19073 where deptno=20); 
+
+//list the details of the dept along with empno and empname or without the emp.
+
+select * from emp19073 e, dept073 d where e.deptno(+)=d.deptno;
+
+
+
+
+////////////////////////////////////////////24/03/2022////////////////////////////////////////////
+
+
+create table ITEMINFO
+(I_NO number(10) not null,
+I_NAME varchar2(25) not null,
+I_PRICE number(1,2) not null,
+I_QTY number(3) not null,
+constraint PK_Ino primary key(I_NO),
+constraint CH_Ino check(I_NO between 1 and 10),
+constraint CH_Iname check(I_NAME =INITCAP(I_NAME)),
+constraint CH_Iprice check(I_PRICE between 0.00 and 10.00),
+constraint CH_Qyt check(I_QTY>5)
+);
+
+insert into ITEMINFO(I_NO,I_NAME,I_PRICE,I_QTY)
+values(1,'Screw',2.25,50);
+
+insert into ITEMINFO(I_NO,I_NAME,I_PRICE,I_QTY)
+values(2,'Nut',5.00,110);
+
+insert into ITEMINFO(I_NO,I_NAME,I_PRICE,I_QTY)
+values(3,'Bolt',6.99,750);
+
+insert into ITEMINFO(I_NO,I_NAME,I_PRICE,I_QTY)
+values(4,'Hammer',9.99,125);
+
+insert into ITEMINFO(I_NO,I_NAME,I_PRICE,I_QTY)
+values(5,'Washer',1.39,100);
+
+insert into ITEMINFO(I_NO,I_NAME,I_PRICE,I_QTY)
+values(6,'Nail',0.99,500);
+
+
+
+
+create table CUSTOMER
+(C_NO number(5) not null,
+C_NAME varchar2(25) not null,
+C_STATE varchar2(2) default 'WB',
+ITEM_NO number(10) not null,
+constraint PK_Cno primary key(C_NO),
+constraint CH_Cno check(C_NO between 10001 and 20000),
+constraint CH_State check(C_STATE in ('WB','UP','AP','MP'))
+);
+
+
+insert into CUSTOMER(C_NO,C_NAME,C_STATE,ITEM_NO)
+values(10001,'Prakash','UP',1);
+
+insert into CUSTOMER(C_NO,C_NAME,C_STATE,ITEM_NO)
+values(10002,'Mukesh','AP',3);
+
+insert into CUSTOMER(C_NO,C_NAME,C_STATE,ITEM_NO)
+values(10003,'MUrty','UP',5);
+
+insert into CUSTOMER(C_NO,C_NAME,C_STATE,ITEM_NO)
+values(10004,'Ranjan','WB',6);
+
+//display all itemno and item quantity from the item table
+select I_NO,I_QTY from ITEMINFO;
+
+//display all details of th customer prakash
+select * from CUSTOMER where C_NAME='Prakash';
+
+//display all customer who are from up
+select C_NAME from CUSTOMER where C_STATE='UP';
+
+//display all customer who are from ap or wb
+select C_NAME from CUSTOMER where C_STATE='AP' OR C_STATE='WB';
+
+//display all customer details along with items whose name ending with 'h'.
+select e.I_NO,e.I_NAME,e.I_PRICE,e.I_QTY,d.C_NO,d.C_NAME,d.C_STATE,d.ITEM_NO from ITEMINFO e,CUSTOMER d where e.I_NO=d.ITEM_NO and d.C_NAME like '%h';
+
+//find all items details which price within 5.6
+select * from ITEMINFO where I_PRICE<=5.6;
+
+//display the item details as per quantity descending order
+select * from ITEMINFO order by I_QTY desc;
+
+//sort all customer in decreasing order of their state
+select * from CUSTOMER order by C_STATE desc;
+
+//find all the items which price greater than 5.6 and quantity less than 100
+select * from ITEMINFO where I_PRICE>5.6 and I_QTY<100;
+
+//find all items which price does not lie in between 4 to 9
+select * from ITEMINFO where I_PRICE not between 4 and 9;
+
+//change the quantity value 70 for the item no 1
+update ITEMINFO set I_QTY=70 where I_NO=1;
+
+//change the item price of Nut to 4.7
+update ITEMINFO set I_PRICE=4.7 where I_NAME='Nut';
+
+//Delete all items which item quantity more than 600
+delete from ITEMINFO where I_QTY>600;
+
+////////////////////////////////////////////31/03/22//////////////////////////////////////////
+
+//insert into iteminfo table by user defined representation. information's are "7,Bolt,7.88,590"
+
+insert into iteminfo values(&I_NO,'&I_NAME',&I_PRICE,&I_QTY);
+
+//Calculate the summation of quantity.
+
+select SUM(I_QTY) from iteminfo;
+
+//Count the number of rows of iteminfo table
+
+select count(*) from iteminfo;
+
+//Insert phoneno attribute into Customer table with size 10
+
+ALTER TABLE iteminfo
+ADD Phoneno number(10);
+
+//Display customer number customer  name & item name from the given table where item name should not be Nail
+
+select c.C_NO,c.C_NAME,i.I_NAME from CUSTOMER c,iteminfo i where i.I_NO=c.ITEM_NO and i.I_NAME!='Nail';
+
+//display all info from both table with item price <5.12 and item quantity>200
+
+select * from customer c,iteminfo i where i.I_NO=c.ITEM_NO and i.I_PRICE<5.12 and i.I_QTY>200;
+
+//Count no of customers belongs to "UP"
+
+select count(*) from customer where C_STATE='UP';
+
+//display all info from iteminfo table of lowest quantity.
+
+select * from iteminfo where I_QTY in (select min(I_QTY) from iteminfo);
+
+//display all constraint of iteminfo table 
+
+select CONSTRAINT_NAME,CONSTRAINT_TYPE from user_constraints where table_name='ITEMINFO';
+
+//display no of customers of each state where counted value of customers more than 1
+
+select count(*) from customer group by C_State having count(*)>1;
+
+//perform the right outer join between the tables where information's of the some right side column must be blank or empty
+
+select * from ITEMINFO e, CUSTOMER d where e.I_NO(+)=d.ITEM_NO;
+
+//create a simple view[Item_Price] with I_Name and I_Price only
+
+create or replace view Item_Price as(select I_Name,I_Price from iteminfo);
+select * from Item_Price;
+
+//display all info from the view
+
+create or replace view All_Item as(select * from iteminfo);
+select * from All_Item;
+
+//create a sequence that can be used to enter new items into Item_XXX table
+
+create sequence Item_XXX start with 10 increment by 1;
+
+//Add a new item into the Item_XXX table with the sequence just create
+
+Insert into Iteminfo(I_NO,I_NAME,I_PRICE,I_QTY)
+values(Item_XXX.nextval,'Abcs',2.5,303);
+
+select * from iteminfo;
+
+
+////////////////////////////////////////////07/04/2022/////////////////////////////////////////////
+
+
+//create BOOK table
+
+create table BOOK
+(NO number(3) not null,
+C_NAME varchar2(25) not null,
+PRICE number(6,2) not null,
+PUBLISHER varchar2(2) default 'AC',
+constraint PK_no primary key(NO),
+constraint CH_no check(NO between 100 and 145),
+constraint CH_PUBLISHER check(PUBLISHER in ('AB','PQ','RS','AC'))
+);
+
+
+desc BOOK;
+
+create sequence book_info increment by 2 start with 100;
+
+insert into BOOK values(book_info.nextval,'Math',1022.25,'AB');
+
+insert into BOOK values(book_info.nextval,'Phy',2135.00,'PQ');
+
+insert into BOOK values(book_info.nextval,'Object Technology',2406.99,'RS');
+
+insert into BOOK values(book_info.nextval,'Network',1259.99,'AB');
+
+insert into BOOK values(book_info.nextval,'Cloud Computing',1654.39,'AC');
+
+
+//display all records of the table
+
+select * from BOOK;
+
+//display all books in ascending order.
+
+select C_NAME from book order by C_NAME asc;
+
+//sort all book as per price descending order
+
+select C_NAME from book order by PRICE desc;
+
+//display numbers of books each publisher
+
+select publisher,count(*) from BOOK group by PUBLISHER;
+
+//insert one tuple where NO comes form sequence and other two info are DBMS,2341.50
+
+insert into BOOK values(book_info.nextval,'DBMS',2341.50);
+
+//find the total cost of all books;
+
+select SUM(PRICE) from BOOK;
+
+//display the details of most costly book
+
+select * from book where PRICE in (select max(PRICE) from BOOK);
+
+//display all book where book name ending with 'd' or 'y'
+
+select C_NAME from BOOK where C_NAME like '%d' or C_NAME like '%y';
+
+//update the book name 'phy' to 'psychology' and price 4300.00
+
+update BOOK set C_NAME='psychology',PRICE=4300.00 where C_NAME='Phy'; 
+
+//create a view of books with the name Book_info and consist of all record
+
+create or replace view Book_info1 as(select * from BOOK);
+select * from Book_info1;
+
+//////////////////////////////////////////21/04/22/////////////////////////////////////////////////
+ED ADD;
+DECLARE
+N1 NUMBER(5);
+N2 NUMBER(5);
+RESULT NUMBER(6);
+BEGIN
+N1:=&NUM;
+N2:=&NUM;
+RESULT:=N1+N2;
+DBMS_OUTPUT.PUT_LINE('THE RESULT IS: '||RESULT);
+END;
+
+
+SET SERVEROUTPUT ON;
+
+/
+
+ED FACT;
+DECLARE
+f number:=1;
+n number:=&1;
+BEGIN
+while n>0 loop
+f:=n*f;
+n:=n-1;
+end loop;
+dbms_output.put_line(f);
+end;
+
+ed fact;
+declare
+n number;
+f number:=1;
+i number;
+begin
+n:=&n;
+for i in 1..n
+loop
+f:=f*i;
+end loop;
+dbms_output.put_line('factorial= '||f);
+end;
+
+
+
+create table Radius_Area(
+Redius number(3) not null,
+Area number(14,2) not null
+);
+
+declare
+r number(3);
+area number(14,2);
+p constant number(3,2):=3.14;
+begin
+for r in 2..10
+loop
+area:=p*power(r,2);
+insert into Radius_Area values(r,area);
+end loop;
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
